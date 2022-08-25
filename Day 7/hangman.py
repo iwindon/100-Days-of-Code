@@ -30,9 +30,8 @@ index = 0
 for letter in chosen_word:
     if letter == guess:
         display[index] = guess
-        item =+ 1
-    else:
-        index =+ 1
+    index += 1
+
     
 
 
