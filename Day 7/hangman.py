@@ -9,7 +9,7 @@ chosen_word = random.choice(word_list)
 
 # starting number of life's
 lives = 6
-
+os.system('clear')
 print(logo)
 
 num = len(chosen_word)
