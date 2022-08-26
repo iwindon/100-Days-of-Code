@@ -1,11 +1,11 @@
 import random
-import sys
-sys.path.append('/Users/ivanwindon/Documents/Code/100-Days-of-Code/Day 7')
-import hangman_art
+# import sys
+# sys.path.append('/Users/ivanwindon/Documents/Code/100-Days-of-Code/Day 7')
+from hangman_art import stages
+from hangman_words import word_list
 
 #TODO-1: - Update the word list to use the 'word_list' from hangman_words.py
 #Delete this line: word_list = ["ardvark", "baboon", "camel"]
-word_list = ["aardvark", "baboon", "camel"]
 
 chosen_word = random.choice(word_list)
 
