@@ -1,17 +1,14 @@
+from dis import dis
 import random
-# import sys
-# sys.path.append('/Users/ivanwindon/Documents/Code/100-Days-of-Code/Day 7')
 from hangman_art import stages
+from hangman_art import logo
 from hangman_words import word_list
-
-#TODO-1: - Update the word list to use the 'word_list' from hangman_words.py
-#Delete this line: word_list = ["ardvark", "baboon", "camel"]
 
 chosen_word = random.choice(word_list)
 
 lives = 6
 
-#TODO-3: - Import the logo from hangman_art.py and print it at the start of the game.
+print(logo)
 
 num = len(chosen_word)
 display = []
@@ -28,7 +25,9 @@ end_of_game = False
 while not end_of_game:
     guess = input("Guess a letter: ").lower()
 
-    #TODO-4: - If the user has entered a letter they've already guessed, print the letter and let them know.
+    if guess in display:
+        print(f"You already guessed the letter {guess}")
+
 
     index = 0
     for letter in chosen_word:
@@ -69,7 +68,7 @@ while not end_of_game:
     #         print("Wrong")
 
     if guess not in chosen_word:
-        #TODO-5: - If the letter is not in the chosen_word, print out the letter and let them know it's not in the word.
+        print(f"The letter {guess} is not in the word.  You lose a life!")
         lives -= 1
         if lives == 0:
             end_of_game = True
@@ -82,5 +81,4 @@ while not end_of_game:
         end_of_game = True
         print("You win!")
     
-    #TODO-2: - Import the stages from hangman_art.py and make this error go away.
     print(stages[lives])
